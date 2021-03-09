@@ -15,8 +15,8 @@ server.on('request', messageQuandRequete);
 
 function messageQuandRequete() {
   let objDate = new Date();
-  console.log(`Une requête provenant de l'application a bien été reçue ! 
-    (${objDate.getDate()} ${objDate.getMonth() + 1}/${objDate.getFullYear()} à ${objDate.getHours()}: ${objDate.getMinutes()} : ${objDate.getSeconds()})`);
+  // console.log(`Une requête provenant de l'application a bien été reçue ! 
+  //   (${objDate.getDate()} ${objDate.getMonth() + 1}/${objDate.getFullYear()} à ${objDate.getHours()}: ${objDate.getMinutes()} : ${objDate.getSeconds()})`);
 
   console.log(`Une requête provenant de l'application a bien été reçue ! ${new Intl.DateTimeFormat('fr-FR', { dateStyle: 'full', timeStyle: 'long' }).format(objDate)}`);
 }
