@@ -12,13 +12,13 @@ const likingAllgo = require('../middlewares/likingSystem');
 const getOldPicture = require('../middlewares/getOldPictureAfterUpdate');
 const checkLike = require('../middlewares/checkUserLiking');        // Désactivez l'option pour éviter d'aimer ou de ne pas aimer nos propres sauces*
 const checkCreateForm = require('../middlewares/checkCreateSauceForm');
-const deletePictureNoValidForm = require('../middlewares/deletePictureNoConformForm');
+const deletePictureNoConformForm = require('../middlewares/deletePictureNoConformForm');
 
-router.post('/', auth, multer, checkCreateForm, sauceController.createSauce, deletePictureNoValidForm);
+router.post('/', auth, multer, checkCreateForm, sauceController.createSauce, deletePictureNoConformForm);
 router.get('/', auth, sauceController.getAllSauces);
 router.get('/:id', auth, sauceController.getOneSauce);
 router.post('/:id/like', auth, likingAllgo, sauceController.likeOneSauce);
-router.put('/:id', auth, multer, getOldPicture, checkCreateForm, sauceController.modifyOneSauce, deletePictureNoValidForm);
+router.put('/:id', auth, multer, getOldPicture, checkCreateForm, sauceController.modifyOneSauce, deletePictureNoConformForm);
 router.delete('/:id', auth, sauceController.deleteSauce);
 
 
