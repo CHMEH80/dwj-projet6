@@ -14,6 +14,7 @@ const checkLike = require('../middlewares/checkUserLiking');        // Désactiv
 const checkCreateForm = require('../middlewares/checkCreateSauceForm');
 const deletePictureNoConformForm = require('../middlewares/deletePictureNoConformForm');
 
+// applique la midleware authentification à toute l'application
 router.post('/', auth, multer, checkCreateForm, sauceController.createSauce, deletePictureNoConformForm);
 router.get('/', auth, sauceController.getAllSauces);
 router.get('/:id', auth, sauceController.getOneSauce);

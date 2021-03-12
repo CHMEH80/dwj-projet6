@@ -7,6 +7,6 @@ const checkDataSignup = require('../middlewares/checkSignup');
 
 // Les Routes
 router.post('/signup', checkDataSignup, userController.signup);
-router.post('/login',userController.login);
+router.post('/login', userController.login);
 
 module.exports = router;

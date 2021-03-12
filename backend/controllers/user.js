@@ -23,7 +23,7 @@ exports.login = (req,res,next) => {
         if(!user) {
             return res.status(401).json({message:"Cette adresse email n'existe pas!"})
         }
-        bcrypt.compare(req.body.password,user.password)
+        bcrypt.compare(req.body.password, user.password)
         .then(valid => {
             if(!valid) {
                 return res.status(401).json({message:"Le mot de passe est incorrect!"})
