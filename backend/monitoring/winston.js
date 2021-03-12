@@ -2,7 +2,7 @@
 var appRoot = require('app-root-path');
 
 // pour gérer les logs
-ar winston = require('winston');
+var winston = require('winston');
 
 
 const logger = winston.createLogger({
